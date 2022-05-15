@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="zxx">
+<html lang="zxx" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+    layout:decorate="~{base.html}">
 
 <!-- Mirrored from htmldemo.hasthemes.com/hono/hono/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 06 Jan 2021 00:31:04 GMT -->
 <!-- Added by HTTrack -->
@@ -13,12 +14,10 @@
 
     <!-- ::::::::::::::Favicon icon::::::::::::::-->
 
-    <link rel="shortcut icon" href="product/images/favicon.ico" type="image/png">
-
-
-    <link rel="stylesheet" href="product/css/vendor/vendor.min.css">
-    <link rel="stylesheet" href="product/css/plugins/plugins.min.css">
-    <link rel="stylesheet" href="product/css/style.min.css">
+    <link rel="shortcut icon" th:href="@{./views/Management/product/images/favicon.ico}" type="image/png">
+    <link rel="stylesheet" th:href="@{./views/Management/product/css/vendor/vendor.min.css}">
+    <link rel="stylesheet" th:href="@{./views/Management/product/css/plugins/plugins.min.css}">
+    <link rel="stylesheet" th:href="@{./views/Management/product/css/style.min.css}">
     <style>
         #list-element {
             display: none;
@@ -39,7 +38,6 @@
             padding: 10px 20px;
             font-size: 18px;
             cursor: pointer;
-            color: #fff;
             border-radius: 4px;
             background-color: #2196f3;
         }
@@ -48,8 +46,8 @@
 
 
 <body>
-    <!-- Start Header Area -->
-    <div>
+    <div layout:fragment="content">
+        <!-- Start Header Area -->
         <header class="header-section d-none d-xl-block">
 
         </header>
@@ -515,241 +513,24 @@
             </div>
         </div>
 
-        <div id="list">
+        <div id="list" th:each="item:${allProduct}">
             <!-- Start Banner Section -->
-            <div id="list-element" class="banner-section section-top-gap-100 section-fluid">
+            <div id="list-elements" class="banner-section section-top-gap-100 section-fluid">
                 <div class="banner-wrapper">
                     <div class="container-fluid">
                         <div class="row mb-n6">
-
+                            show thymelef
                             <div class="col-lg-6 col-12 mb-6">
-                                <!-- Start Banner Single Item -->
+                                Start Banner Single Item
                                 <a href="http://127.0.0.1:5501/detailProduct.html">
                                     <div class="banner-single-item banner-style-1 banner-animation img-responsive"
                                         data-aos="fade-up" data-aos-delay="0">
 
                                         <div class="image">
-                                            <img src="product/images/banner/banner-style-1-img-1.jpg" alt="">
-
+                                            <img th:src="${item.getLinkImage()}" alt="">
                                         </div>
                                         <div class="content">
-                                            <h4 class="title">Mini rechargeable
-                                                Table Lamp - E216</h4>
-                                            <h5 class="sub-title">We design your home</h5>
-
-                                        </div>
-                                    </div>
-                                </a>
-                                <!-- End Banner Single Item -->
-                            </div>
-
-                            <div class="col-lg-6 col-12 mb-6">
-                                <div class="row mb-n6">
-                                    <!-- Start Banner Single Item -->
-
-                                    <div class="col-lg-6 col-sm-6 mb-6">
-                                        <a href="http://127.0.0.1:5501/detailProduct.html">
-                                            <div class="banner-single-item banner-style-2 banner-animation img-responsive"
-                                                data-aos="fade-up" data-aos-delay="0">
-                                                <div class="image">
-                                                    <img src="product/images/banner/banner-style-2-img-1.jpg" alt="">
-                                                </div>
-                                                <div class="content">
-                                                    <h4 class="title">Kitchen <br>
-                                                        utensils</h4>
-
-                                                </div>
-                                            </div>
-                                        </a>
-                                    </div>
-
-
-                                    <!-- End Banner Single Item -->
-                                    <!-- Start Banner Single Item -->
-
-                                    <div class="col-lg-6 col-sm-6 mb-6">
-                                        <a href="http://127.0.0.1:5501/detailProduct.html">
-                                            <div class="banner-single-item banner-style-2 banner-animation img-responsive"
-                                                data-aos="fade-up" data-aos-delay="200">
-                                                <div class="image">
-                                                    <img src="product/images/banner/banner-style-2-img-2.jpg" alt="">
-                                                </div>
-                                                <div class="content">
-                                                    <h4 class="title">Sofas and <br>
-                                                        Armchairs</h4>
-
-                                                </div>
-                                            </div>
-                                        </a>
-                                    </div>
-                                    <!-- End Banner Single Item -->
-                                    <!-- Start Banner Single Item -->
-                                    <div class="col-lg-6 col-sm-6 mb-6">
-                                        <a href="http://127.0.0.1:5501/detailProduct.html">
-                                            <div class="banner-single-item banner-style-2 banner-animation img-responsive"
-                                                data-aos="fade-up" data-aos-delay="0">
-                                                <div class="image">
-                                                    <img src="product/images/banner/banner-style-2-img-3.jpg" alt="">
-                                                </div>
-                                                <div class="content">
-                                                    <h4 class="title">Chair & Bar<br>
-                                                        stools</h4>
-
-                                                </div>
-                                            </div>
-                                        </a>
-                                    </div>
-                                    <!-- End Banner Single Item -->
-                                    <!-- Start Banner Single Item -->
-                                    <div class="col-lg-6 col-sm-6 mb-6">
-                                        <a href="http://127.0.0.1:5501/detailProduct.html">
-                                            <div class="banner-single-item banner-style-2 banner-animation img-responsive"
-                                                data-aos="fade-up" data-aos-delay="200">
-                                                <div class="image">
-                                                    <img src="product/images/banner/banner-style-2-img-4.jpg" alt="">
-                                                </div>
-                                                <div class="content">
-                                                    <h4>Interior <br>
-                                                        lighting</h4>
-
-                                                </div>
-                                            </div>
-                                        </a>
-                                    </div>
-                                    <!-- End Banner Single Item -->
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-            <!-- End Banner Section -->
-
-            <!-- Start Banner Section -->
-            <div id="list-element" class="banner-section section-top-gap-100 section-fluid">
-                <div class="banner-wrapper">
-                    <div class="container-fluid">
-                        <div class="row mb-n6">
-
-
-                            <div class="col-lg-6 col-12 mb-6">
-                                <div class="row mb-n6">
-                                    <!-- Start Banner Single Item -->
-                                    <div class="col-lg-6 col-sm-6 mb-6">
-                                        <a href="http://127.0.0.1:5501/detailProduct.html">
-                                            <div class="banner-single-item banner-style-2 banner-animation img-responsive"
-                                                data-aos="fade-up" data-aos-delay="0">
-                                                <div class="image">
-                                                    <img src="product/images/banner/banner-style-2-img-1.jpg" alt="">
-                                                </div>
-                                                <div class="content">
-                                                    <h4 class="title">Kitchen <br>
-                                                        utensils</h4>
-
-                                                </div>
-                                            </div>
-                                        </a>
-                                    </div>
-                                    <!-- End Banner Single Item -->
-                                    <!-- Start Banner Single Item -->
-                                    <div class="col-lg-6 col-sm-6 mb-6">
-                                        <a href="http://127.0.0.1:5501/detailProduct.html">
-                                            <div class="banner-single-item banner-style-2 banner-animation img-responsive"
-                                                data-aos="fade-up" data-aos-delay="200">
-                                                <div class="image">
-                                                    <img src="product/images/banner/banner-style-2-img-2.jpg" alt="">
-                                                </div>
-                                                <div class="content">
-                                                    <h4 class="title">Sofas and <br>
-                                                        Armchairs</h4>
-
-                                                </div>
-                                            </div>
-                                        </a>
-                                    </div>
-                                    <!-- End Banner Single Item -->
-                                    <!-- Start Banner Single Item -->
-                                    <div class="col-lg-6 col-sm-6 mb-6">
-                                        <a href="http://127.0.0.1:5501/detailProduct.html">
-                                            <div class="banner-single-item banner-style-2 banner-animation img-responsive"
-                                                data-aos="fade-up" data-aos-delay="0">
-                                                <div class="image">
-                                                    <img src="product/images/banner/banner-style-2-img-3.jpg" alt="">
-                                                </div>
-                                                <div class="content">
-                                                    <h4 class="title">Chair & Bar<br>
-                                                        stools</h4>
-
-                                                </div>
-                                            </div>
-                                        </a>
-                                    </div>
-                                    <!-- End Banner Single Item -->
-                                    <!-- Start Banner Single Item -->
-                                    <div class="col-lg-6 col-sm-6 mb-6">
-                                        <a href="http://127.0.0.1:5501/detailProduct.html">
-                                            <div class="banner-single-item banner-style-2 banner-animation img-responsive"
-                                                data-aos="fade-up" data-aos-delay="200">
-                                                <div class="image">
-                                                    <img src="product/images/banner/banner-style-2-img-4.jpg" alt="">
-                                                </div>
-                                                <div class="content">
-                                                    <h4>Interior <br>
-                                                        lighting</h4>
-                                                    <a href="product-details-default.html"><span>Shop now</span></a>
-                                                </div>
-                                            </div>
-                                        </a>
-                                    </div>
-                                    <!-- End Banner Single Item -->
-                                </div>
-                            </div>
-
-                            <div class="col-lg-6 col-12 mb-6">
-                                <!-- Start Banner Single Item -->
-                                <a href="http://127.0.0.1:5501/detailProduct.html">
-                                    <div class="banner-single-item banner-style-1 banner-animation img-responsive"
-                                        data-aos="fade-up" data-aos-delay="0">
-                                        <div class="image">
-                                            <img src="product/images/banner/banner-style-1-img-1.jpg" alt="">
-                                        </div>
-                                        <div class="content">
-                                            <h4 class="title">Mini rechargeable
-                                                Table Lamp - E216</h4>
-                                            <h5 class="sub-title">We design your home</h5>
-
-                                        </div>
-                                    </div>
-                                </a>
-                                <!-- End Banner Single Item -->
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-            <!-- End Banner Section -->
-
-            <!-- Start Banner Section -->
-            <div id="list-element" class="banner-section section-top-gap-100 section-fluid">
-                <div class="banner-wrapper">
-                    <div class="container-fluid">
-                        <div class="row mb-n6">
-
-                            <div class="col-lg-6 col-12 mb-6">
-                                <!-- Start Banner Single Item -->
-                                <a href="http://127.0.0.1:5501/detailProduct.html">
-                                    <div class="banner-single-item banner-style-1 banner-animation img-responsive"
-                                        data-aos="fade-up" data-aos-delay="0">
-
-                                        <div class="image">
-                                            <img src="product/images/banner/banner-style-1-img-1.jpg" alt="">
-
-                                        </div>
-                                        <div class="content">
-                                            <h4 class="title">Mini rechargeable
-                                                Table Lamp - E216</h4>
+                                            <h4 class="title" th:text="${item.getName()}"></h4>
                                             <h5 class="sub-title">We design your home</h5>
                                             <a href="product-details-default.html"
                                                 class="btn btn-lg btn-outline-golden icon-space-left"><span
@@ -758,12 +539,12 @@
                                         </div>
                                     </div>
                                 </a>
-                                <!-- End Banner Single Item -->
+                                End Banner Single Item
                             </div>
 
                             <div class="col-lg-6 col-12 mb-6">
                                 <div class="row mb-n6">
-                                    <!-- Start Banner Single Item -->
+                                    Start Banner Single Item
                                     <a href="http://127.0.0.1:5501/detailProduct.html">
                                         <div class="col-lg-6 col-sm-6 mb-6">
 
@@ -783,8 +564,8 @@
                                         </div>
                                     </a>
 
-                                    <!-- End Banner Single Item -->
-                                    <!-- Start Banner Single Item -->
+                                    End Banner Single Item
+                                    Start Banner Single Item
 
                                     <div class="col-lg-6 col-sm-6 mb-6">
                                         <div class="banner-single-item banner-style-2 banner-animation img-responsive"
@@ -800,8 +581,8 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <!-- End Banner Single Item -->
-                                    <!-- Start Banner Single Item -->
+                                    End Banner Single Item
+                                    Start Banner Single Item
                                     <div class="col-lg-6 col-sm-6 mb-6">
                                         <div class="banner-single-item banner-style-2 banner-animation img-responsive"
                                             data-aos="fade-up" data-aos-delay="0">
@@ -816,8 +597,8 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <!-- End Banner Single Item -->
-                                    <!-- Start Banner Single Item -->
+                                    End Banner Single Item
+                                    Start Banner Single Item
                                     <div class="col-lg-6 col-sm-6 mb-6">
                                         <div class="banner-single-item banner-style-2 banner-animation img-responsive"
                                             data-aos="fade-up" data-aos-delay="200">
@@ -831,7 +612,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <!-- End Banner Single Item -->
+                                    End Banner Single Item
                                 </div>
                             </div>
                         </div>
@@ -842,7 +623,7 @@
             <!-- End Banner Section -->
 
             <!-- Start Banner Section -->
-            <div id="list-element" class="banner-section section-top-gap-100 section-fluid">
+            <div id="list-elements" class="banner-section section-top-gap-100 section-fluid">
                 <div class="banner-wrapper">
                     <div class="container-fluid">
                         <div class="row mb-n6">
@@ -941,6 +722,10 @@
                 </div>
             </div>
             <!-- End Banner Section -->
+
+
+
+
             <button class="loadmore">Xem Thêm</button>
         </div>
 
@@ -971,7 +756,6 @@
             </div>
         </div>
         <!-- End Banner Section -->
-
 
 
         <!-- Start Banner Section -->
@@ -1133,11 +917,11 @@
     <script src="assets/js/plugins/ajax-mail.js"></script> -->
 
     <!-- Use the minified version files listed below for better performance and remove the files listed above -->
-    <script src="product/js/vendor/vendor.min.js"></script>
-    <script src="product/js/plugins/plugins.min.js"></script>
+    <script th:src="@{./views/Management/product/js/vendor/vendor.min.js}"></script>
+    <script th:src="@{./views/Management/product/js/main.js}"></script>
 
     <!-- Main JS -->
-    <script src="product/js/main.js"></script>
+    <script th:src="@{./views/Management/product/js/main.js}"></script>
 </body>
 
 <!-- Mirrored from htmldemo.hasthemes.com/hono/hono/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 06 Jan 2021 00:31:38 GMT -->
