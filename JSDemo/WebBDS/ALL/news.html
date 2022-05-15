@@ -18,100 +18,6 @@
         img.lazy-background.lazied {
             filter: none;
         }
-
-        /* show-swiper-css */
-        /* Import google font (Balsamiq Sans) */
-        @import url("https://fonts.googleapis.com/css2?family=Balsamiq+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap");
-
-        /* Box sizing rules */
-        *,
-        *::before,
-        *::after {
-            box-sizing: border-box;
-        }
-
-        /* Remove default padding and margin */
-        * {
-            padding: 0;
-            margin: 0;
-        }
-
-        /* Default anchor tag styling */
-        a {
-            text-decoration: none;
-            color: black;
-        }
-
-        a:hover {
-            cursor: pointer;
-        }
-
-        div.project_content {
-            padding-top: 25vh;
-            justify-items: center;
-            align-items: center;
-        }
-
-        .project_content h1,
-        h2,
-        p {
-            padding: 0.2rem 1rem;
-        }
-
-        .project_container img {
-            height: 75%;
-        }
-
-        /* Swiper container stylng */
-        .swiper {
-            right: 1rem;
-            width: 100%;
-            height: 100%;
-        }
-
-        .swiper-slide {
-            text-align: center;
-            /* Center slide text vertically */
-            display: -webkit-box;
-            display: -ms-flexbox;
-            display: -webkit-flex;
-            display: flex;
-            -webkit-box-pack: center;
-            -ms-flex-pack: center;
-            -webkit-justify-content: center;
-            justify-content: center;
-            -webkit-box-align: center;
-            -ms-flex-align: center;
-            -webkit-align-items: center;
-            align-items: center;
-
-            position: relative;
-        }
-
-        .swiper-slide-text {
-            position: absolute;
-            bottom: 3rem;
-        }
-
-        .swiper-slide-text h1 {
-            color: rgb(216, 79, 79);
-            font-family: Open Sans;
-            font-size: 50px;
-            font-weight: 500;
-        }
-
-        .swiper-slide-text h3 {
-            color: white;
-            display: inline;
-            font-size: 30px;
-            font-weight: 700;
-        }
-
-        .swiper-slide-img {
-            /* position: absolute; */
-            width: 100%;
-            height: 100%;
-        }
     </style>
     <script>
         function objValue(obj, is, value) { //Access 1 object bằng key
@@ -293,7 +199,18 @@
         }
     </style>
 
+    <script>
+        window["_au_api"] = "https://rever.vn/api";
+        window['fap_url'] = "https://s3-cdn.rever.vn/p/v2.42.42/js/fap.min.js?v=1650377153732";
+        window['fap.server'] = '//analytics.rever.vn/fap';
+        window['favorite_api'] = 'https://rever.vn/mapi';
+        window['googleClientId'] = '539423642927.apps.googleusercontent.com';
+        window['staticUrl'] = 'https://s3-cdn.rever.vn/p/v2.42.42';
+        window['hotline'] = '1800 234 546';
 
+        window['isLoggedIn'] = false;
+        window['isProduction'] = "true" === "true"
+    </script>
 
 
     <script type="deferjs">
@@ -301,7 +218,48 @@
       analytics.load("4LCsqFQzVAmMhPA650qKAAbZoHweHzHt", { integrations: { 'Mixpanel': false} });
     }}();
   </script>
+    <script type="deferjs">
+    //Track thêm tags
+      var tagTrackings = []
+      
+      var pageviewProperties = {
+  "project_info" : {
+    "id" : "1648088636783_6313",
+    "alias" : "the-rivus"
+  },
+  "address_info" : {
+    "street" : "Nguyễn Xiển",
+    "ward" : "Long Bình",
+    "ward_id" : "1577346021344_5307",
+    "district" : "Quận 9",
+    "district_id" : "1577269008573_2161",
+    "city" : "Hồ Chí Minh",
+    "city_id" : "1576833711767_2408",
+    "geolocation" : {
+      "lat" : 10.841644913373246,
+      "lon" : 106.84928287474365,
+      "valid" : true
+    },
+    "street_id" : "nguyen-xien",
+    "city_alias" : "ho-chi-minh",
+    "district_alias" : "quan-9",
+    "ward_alias" : "long-binh-quan-9",
+    "street_alias" : "nguyen-xien-quan-9-ho-chi-minh",
+    "full" : "Nguyễn Xiển, Long Bình, Quận 9, Hồ Chí Minh",
+    "short" : "Nguyễn Xiển, Quận 9"
+  }
+}
 
+      analytics.page(Object.assign({
+        domain: location.hostname,
+        tags: tagTrackings.length > 0 ? tagTrackings : undefined
+      }, pageviewProperties));
+
+      analytics.ready(function(){
+        //window.mixpanel.init("31bae2b919cfc12821646533a62aee1b")
+        //window.track("Page View")
+      })
+  </script>
 
     <script type="deferjs">(function(c,a){if(!a.__SV){var b=window;try{var d,m,j,k=b.location,f=k.hash;d=function(a,b){return(m=a.match(RegExp(b+"=([^&]*)")))?m[1]:null};f&&d(f,"state")&&(j=JSON.parse(decodeURIComponent(d(f,"state"))),"mpeditor"===j.action&&(b.sessionStorage.setItem("_mpcehash",f),history.replaceState(j.desiredHash||"",c.title,k.pathname+k.search)))}catch(n){}var l,h;window.mixpanel=a;a._i=[];a.init=function(b,d,g){function c(b,i){var a=i.split(".");2==a.length&&(b=b[a[0]],i=a[1]);b[i]=function(){b.push([i].concat(Array.prototype.slice.call(arguments,
     0)))}}var e=a;"undefined"!==typeof g?e=a[g]=[]:g="mixpanel";e.people=e.people||[];e.toString=function(b){var a="mixpanel";"mixpanel"!==g&&(a+="."+g);b||(a+=" (stub)");return a};e.people.toString=function(){return e.toString(1)+".people (stub)"};l="disable time_event track track_pageview track_links track_forms track_with_groups add_group set_group remove_group register register_once alias unregister identify name_tag set_config reset opt_in_tracking opt_out_tracking has_opted_in_tracking has_opted_out_tracking clear_opt_in_out_tracking people.set people.set_once people.unset people.increment people.append people.union people.track_charge people.clear_charges people.delete_user people.remove".split(" ");
@@ -798,18 +756,18 @@
         <div class="col-left">
             <div class="logo-large">
                 <a data-mix-header-click="group: logo, action: click_logo" href="/" title="Rever logo">
-                    <img src="./JSDemo/WebBDS/Image/NESTATE_LOGO.jpg" alt="Rever" style="width:100px;height: 60px;">
+                    <img src="../../WebBDS/Image/NESTATE_LOGO.jpg" alt="Rever" style="width:100px;height: 60px;">
                 </a>
             </div>
             <div class="logo">
                 <a href="/" data-mix-header-click="group: logo, action: click_logo" title="Rever logo">
-                    <img src="./JSDemo/WebBDS/Image/NESTATE_LOGO.jpg" alt="Rever">
+                    <img src="../../WebBDS/Image/NESTATE_LOGO.jpg" alt="Rever">
 
                 </a>
                 <div class="main-nav-menu">
                     <div class="main-nav-menu__head">
                         <a href="/" class="logo">
-                            <img src="./JSDemo/WebBDS/Image/NESTATE_LOGO.jpg" alt="Rever">
+                            <img src="../../WebBDS/Image/NESTATE_LOGO.jpg" alt="Rever">
                         </a>
                         <button class="close__main-menu">
                             <i class="zmdi zmdi-close"></i>
@@ -822,7 +780,6 @@
                                 <span>Trang chủ</span>
                             </a>
                         </li>
-
 
                         <li>
                             <a href="tel:1800234546" data-mix-header-click="group: hotline, action: click_hotline">
@@ -878,24 +835,12 @@
             <div class="container">
                 <div class="row">
                     <ul class="breadcrumb no__scrollbar">
-                        <li>
-                            <a class="text-blue" href="https://rever.vn/s/ho-chi-minh/mua" target="_blank">
-                                Hồ Chí Minh
-                            </a>
-                        </li>
-                        <li>
-                            <a class="text-blue" href="https://rever.vn/s/quan-9/mua" target="_blank">
-                                Quận 9
-                            </a>
-                        </li>
-                        <li>
-                            The Rivus
-                        </li>
+
                     </ul>
                     <ul class="menu-sticky no__scrollbar">
                         <li class="logo">
-                            <a onclick="window.location = '/'" href="/"><img
-                                    src="./JSDemo/WebBDS/Image/NESTATE_LOGO.jpg" alt="Rever"></a>
+                            <a onclick="window.location = '/'" href="/"><img src="../../WebBDS/Image/NESTATE_LOGO.jpg"
+                                    alt="Rever"></a>
                         </li>
                         <li class="actives"><a data-smooth-scroll href="#overview">Tổng quan</a></li>
                         <li><a data-smooth-scroll href="#position">Vị trí</a></li>
@@ -904,11 +849,12 @@
                 </div>
             </div>
         </div>
-
-        <div class="container" style="max-width: 75%;">
-
+        <div class="container" style="max-width: 65%;">
+            <div>
+                <h1 style="font-size: 50px; margin-bottom: 3rem; text-align: center;">Tên bài viết</h1>
+            </div>
             <div class="row">
-                <div class="project-content" style="max-width: 70%;">
+                <div class="project-content" style="max-width: 100%;">
                     <div class="project-gallery">
                         <div class="project-gallery__cover">
                             <button onclick="fullscreenProjectGallery && fullscreenProjectGallery()"
@@ -919,66 +865,15 @@
                                             onclick="fullscreenProjectGallery && fullscreenProjectGallery()"
                                             src="https://photo.rever.vn/v3/get/rvXKgnXrA2CtJ11IuDZ48aLZaK1u3Xjay3SPlw2ApcT+KIsXVPrDRvCnzoOC9D1ioeorYPCxTghY9TFYf92fplZg==/900x600/image.jpg"
                                             alt="Rever" /></li>
-                                    <li title="Dự án The Rivus"><img
-                                            onclick="fullscreenProjectGallery && fullscreenProjectGallery()"
-                                            src="https://photo.rever.vn/v3/get/rvF6d+Zw+JJuoIwZHY4TbOZRSJG1oJ90aet97YAlxl5eZ_XDdbj5Za7vBpFT0uyVbsWyoAzSpL1DiHTbMueyF0Gg==/900x600/image.jpg"
-                                            alt="Rever" /></li>
-                                    <li title="Dự án The Rivus"><img
-                                            onclick="fullscreenProjectGallery && fullscreenProjectGallery()"
-                                            src="https://photo.rever.vn/v3/get/rv4eBpzSIN8cxLURPZWTml1l6K30QLxL3s80ffmUwvneX1O1F+21jxNEA52HTCmyW9IYQGFyjJ+omz9_UWx9mt1w==/900x600/image.jpg"
-                                            alt="Rever" /></li>
-                                    <li title="Dự án The Rivus"><img
-                                            onclick="fullscreenProjectGallery && fullscreenProjectGallery()"
-                                            src="https://photo.rever.vn/v3/get/rvWJfnXDVdJBRnJkLQNhiHual7Mg+xk4VC8XepsYN7v595PzORYddmfaEBuUq1o98HuKjJBkyxienlcIfEAGuMMQ==/900x600/image.jpg"
-                                            alt="Rever" /></li>
-                                    <li title="Dự án The Rivus"><img
-                                            onclick="fullscreenProjectGallery && fullscreenProjectGallery()"
-                                            src="https://photo.rever.vn/v3/get/rvf0KfGddixv3sfy0W_KsjmCHWqXUoAKqJEPUpPp7JZgmH+9lTKws4ShC4_iAqwf+CVU3SCpWKM+miQm089krXBg==/900x600/image.jpg"
-                                            alt="Rever" /></li>
-                                    <li title="Dự án The Rivus"><img
-                                            onclick="fullscreenProjectGallery && fullscreenProjectGallery()"
-                                            src="https://photo.rever.vn/v3/get/rvjRYyHlm38IzXQL56NtCRISp+uejrWptDiimxieJmC15DFEoyYcK1IUvhhZ+awhv8KxJzixrmJC9QLCK8sg9Oww==/900x600/image.jpg"
-                                            alt="Rever" /></li>
-                                    <li title="Dự án The Rivus"><img
-                                            onclick="fullscreenProjectGallery && fullscreenProjectGallery()"
-                                            src="https://photo.rever.vn/v3/get/rvn97K3R2Uvch6YY5PXiad9jrJdznKROkM2OIf4H5gsadeLPg7t52ajCImEUr0zBuFoMOtc0Kkg85l4LWjSUPLUw==/900x600/image.jpg"
-                                            alt="Rever" /></li>
-                                    <li title="Dự án The Rivus"><img
-                                            onclick="fullscreenProjectGallery && fullscreenProjectGallery()"
-                                            src="https://photo.rever.vn/v3/get/rvB9lXxCARfSNFxg8uEducuEHtd5q2LBcLZi1vv3ROvQPq4wzZfBZyr14TbNyVw0MMxsdCXq7V3vsgNvTA6eGH1g==/900x600/image.jpg"
-                                            alt="Rever" /></li>
-                                    <li title="Dự án The Rivus"><img
-                                            onclick="fullscreenProjectGallery && fullscreenProjectGallery()"
-                                            src="https://photo.rever.vn/v3/get/rvuWFdfAOD3cp4QAysnAqMOldlfYbZx6ZPEG1T6QqdcIDE4nZTDArYyUgPo76sZJOI3angrhPDT9MrohydPNc+0Q==/900x600/image.jpg"
-                                            alt="Rever" /></li>
                                 </ul>
                             </div>
                             <div id="project-gallery--counter" class="project-gallery--counter">
                                 <span class="slider-item-current"></span>/<span class="slider-item-total"></span><span
-                                    class="slider__thumb-title">Dự án The Rivus</span>
+                                    class="slider__thumb-title">Dự án The Nestate</span>
                             </div>
                         </div>
                         <div id="project-slider__carousel" class="project-slider__carousel flexslider">
-                            <ul class="slides">
-                                <li><img src="https://photo.rever.vn/v3/get/rvXKgnXrA2CtJ11IuDZ48aLZaK1u3Xjay3SPlw2ApcT+KIsXVPrDRvCnzoOC9D1ioeorYPCxTghY9TFYf92fplZg==/900x600/image.jpg"
-                                        alt="Rever" /></li>
-                                <li><img src="https://photo.rever.vn/v3/get/rvF6d+Zw+JJuoIwZHY4TbOZRSJG1oJ90aet97YAlxl5eZ_XDdbj5Za7vBpFT0uyVbsWyoAzSpL1DiHTbMueyF0Gg==/900x600/image.jpg"
-                                        alt="Rever" /></li>
-                                <li><img src="https://photo.rever.vn/v3/get/rv4eBpzSIN8cxLURPZWTml1l6K30QLxL3s80ffmUwvneX1O1F+21jxNEA52HTCmyW9IYQGFyjJ+omz9_UWx9mt1w==/900x600/image.jpg"
-                                        alt="Rever" /></li>
-                                <li><img src="https://photo.rever.vn/v3/get/rvWJfnXDVdJBRnJkLQNhiHual7Mg+xk4VC8XepsYN7v595PzORYddmfaEBuUq1o98HuKjJBkyxienlcIfEAGuMMQ==/900x600/image.jpg"
-                                        alt="Rever" /></li>
-                                <li><img src="https://photo.rever.vn/v3/get/rvf0KfGddixv3sfy0W_KsjmCHWqXUoAKqJEPUpPp7JZgmH+9lTKws4ShC4_iAqwf+CVU3SCpWKM+miQm089krXBg==/900x600/image.jpg"
-                                        alt="Rever" /></li>
-                                <li><img src="https://photo.rever.vn/v3/get/rvjRYyHlm38IzXQL56NtCRISp+uejrWptDiimxieJmC15DFEoyYcK1IUvhhZ+awhv8KxJzixrmJC9QLCK8sg9Oww==/900x600/image.jpg"
-                                        alt="Rever" /></li>
-                                <li><img src="https://photo.rever.vn/v3/get/rvn97K3R2Uvch6YY5PXiad9jrJdznKROkM2OIf4H5gsadeLPg7t52ajCImEUr0zBuFoMOtc0Kkg85l4LWjSUPLUw==/900x600/image.jpg"
-                                        alt="Rever" /></li>
-                                <li><img src="https://photo.rever.vn/v3/get/rvB9lXxCARfSNFxg8uEducuEHtd5q2LBcLZi1vv3ROvQPq4wzZfBZyr14TbNyVw0MMxsdCXq7V3vsgNvTA6eGH1g==/900x600/image.jpg"
-                                        alt="Rever" /></li>
-                                <li><img src="https://photo.rever.vn/v3/get/rvuWFdfAOD3cp4QAysnAqMOldlfYbZx6ZPEG1T6QqdcIDE4nZTDArYyUgPo76sZJOI3angrhPDT9MrohydPNc+0Q==/900x600/image.jpg"
-                                        alt="Rever" /></li>
-                            </ul>
+
                         </div>
                     </div>
                     <div class="project-general visible-sm">
@@ -996,7 +891,8 @@
                     </div>
                     <div id="overview" class="project-intro">
                         <h2 class="heading-02">Giới thiệu</h2>
-                        <div class="project-intro__desc" style="height: 200px; overflow: hidden; white-space: pre-line">
+                        <div class="project-intro__desc"
+                            style="height: 200px; overflow: hidden; white-space: pre-line, max-width:100%">
                             <desc-view-more>
                                 <p>Chủ đầu tư Masterise Homes trong năm 2022 sẽ ra mắt phân khu dinh thự, biệt thự tại
                                     khu đô thị Vinhomes Grand Park (Phường Long Bình, TP Thủ Đức) với tên gọi chính thức
@@ -1073,7 +969,7 @@
                     </div>
                     <div class="box-collapse">
                         <h2 class="heading-02 heading-02__sub">Tiện ích</h2>
-                        <div class="collapse row" style="">
+                        <div class="collapse">
 
                         </div>
                     </div>
@@ -1081,16 +977,16 @@
                         <div class="collapse">
                             <div class="content">
                                 <div class="logo">
-                                    <img data-src="./JSDemo/WebBDS/Image/NESTATE_LOGO.jpg" class="lazy" alt="Rever">
+                                    <img data-src="../../WebBDS/Image/NESTATE_LOGO.jpg" class="lazy" alt="Rever">
                                 </div>
-                                <h3 class="title">Vì sao nên mua dự án The Nestate?</h3>
+                                <h3 class="title">Vì sao nên mua dự án The Rivus?</h3>
                                 <div class="content-row">
                                     <ul>
 
 
                                         <li>Chúng tôi luôn đứng về phía Khách Hàng.</li>
                                         <li>Cung cấp miễn phí thông tin thị trường BĐS khu vực.</li>
-                                        <li>Chuyên viên Nestate sẵn sàng hỗ trợ 24/7.</li>
+                                        <li>Chuyên viên Rever sẵn sàng hỗ trợ 24/7.</li>
                                     </ul>
                                 </div>
 
@@ -1099,72 +995,20 @@
                             </div>
                         </div>
                     </div>
-                    <div id="position" class="box-collapse">
-                        <h2 class="heading-02">Vị trí dự án</h2>
-
-                        <div class="collapse">
-                            <iframe style="width: 100%;"
-                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d17720.32808941094!2d108.21723236007723!3d16.044823074133063!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x314219beb8af586d%3A0xc2732f3d09cd14bb!2sFamily%20Hospital!5e0!3m2!1sen!2s!4v1650729632841!5m2!1sen!2s"
-                                width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
-                                referrerpolicy="no-referrer-when-downgrade"></iframe>
-                            <!-- <input id="toggle-04" type="checkbox" checked="checked">
-                            <label for="toggle-04"></label>
-                            <place-map map-key="AIzaSyB_J7TCgptlDrvjaFaHrayYb1C2F8ZaeBg" :lat="10.841644913373246"
-                                :lon="106.84928287474365" class="content project--location" id="expand-04"></place-map> -->
-
-                        </div>
-                    </div>
+                    <!-- <div id="position" class="box-collapse">
+                        <h2 class="heading-02">Vị trí dự án</h2> -->
 
 
                 </div>
-                <div class="sidebar " style="max-width:30%">
-                    <div class="sidebar-content">
-                        <h1 class="project__title">Nestate</h1>
-                        <div class="project__address">
-                            <h4><a href="">Long Bình</a></h4>
-                            <h4><a href="">Quận 9</a></h4>
-                        </div>
-                        <ul class="project__price">
-                            <li>
-                                <p>Giá</p>
-                                <a href="javascript:void(0)" id="lbl-request-price"
-                                    data-project-contact="sidebar_price_contact"><b>Liên hệ để nhận tư vấn</b></a>
-                            </li>
-                        </ul>
-                        <ul class="project-general__list">
-                            <li>
-                                <p>Trạng thái:</p>
-                                <b>Sắp mở bán</b>
-                            </li>
-                            <li>
-                                <p>Chủ đầu tư:</p>
-                                <b>Masterise Homes</b>
-                            </li>
-                            <li>
-                                <p>Loại hình:</p>
-                                <b class="list-type">
-                                    <span>Biệt thự</span><span>Nhà phố</span>
-                                </b>
-                            </li>
-                        </ul>
-                        <a data-phone-hidden="category: ContactProject, event: ClickSidebarHotline"
-                            data-hotline-track="target_type: project" style="opacity: 0.6;" href="tel:1800234546"
-                            class="call-rva">
-                            <i class="zmdi zmdi-phone"></i> <span class="text">1800 234 ***</span>
-                        </a>
-                        <div class="group-cta">
-                            <!-- <a id="btn-project-chat" href="javascript:void(0)" style="opacity: 0.3"
-                                class="btn-hubspot-chat">Chat với Rever</a> -->
-                            <a data-project-contact="sidebar" href="javascript:void(0)" style="opacity: 0.3">Liên hệ lại
-                                tôi</a>
-                        </div>
-                    </div>
-                </div>
-
 
 
             </div>
+
+
+
+
         </div>
+    </div>
     </div>
     </div>
     <!-- bạn đang quan tân dén dự án The Virus -->
@@ -1273,188 +1117,15 @@
 
 
 
-    <!-- <script type="deferjs"
-        src="https://s3-cdn.rever.vn/p/v2.42.42/app_v2/login-popup-app.min.js?v=1650377153732"></script> -->
+    <script type="deferjs"
+        src="https://s3-cdn.rever.vn/p/v2.42.42/app_v2/login-popup-app.min.js?v=1650377153732"></script>
     <style>
         #msform a.butt-primary[disabled] {
             opacity: 0.4
         }
     </style>
     <!-- bạn đang quan tâm đến dự án -->
-    <!-- <div v-show="isShowModal" class="popup-feedback" id="feedback-modal" v-cloak>
-        <div class="popup-feedback-fixed">
-            <div class="popup-body-fb">
-                <div v-show="state == 'composing'" class="popup-contain">
-                    <div class="visible-pc">
-                        <form id="msform" onsubmit="false">
-                            <fieldset style="display: block">
-                                <h2 class="popup-title-w-back height-title popup-font-tiempos" id="title-head">Đánh giá
-                                    của bạn về Rever.vn (<span v-text="step"></span>/3)</h2>
-                                <button @click="hideModal()" class="popup-close-btn"><i
-                                        class="zmdi zmdi-hc-2x zmdi-close"></i></button>
-                                <div v-show="step == 1" class="contain" id="step-form-1">
-                                    <div class="intro">Bạn có sẵn sàng giới thiệu Rever cho người khác?</div>
-                                    <div class="choose-number">
-                                        <ul>
-                                            <li v-for="i in 10" @mouseover="onMouseOverRate(i)"
-                                                @mouseleave="onMouseLeaveRate(i)" @click="selectStep1Rate(i)">
-                                                <a :class="{active: step1.rate == i}" href="javascript:void(0)"
-                                                    v-text="i"></a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <div class="emotion">
-                                        <img :src="'https://s3-cdn.rever.vn/p/v2.42.42/images/' + step1Icon" alt="">
-                                        <p v-text="step1Msg" style="display: block">Tôi sẽ giới thiệu ngay</p>
-                                    </div>
-                                </div>
-                                <div v-show="step == 2" class="contain" id="step-form-2">
-                                    <div class="intro">Bạn có thấy Rever.vn dễ sử dụng không?</div>
-                                    <div class="row row-fb pd-t-39 pd-bt-68 center-item">
-                                        <button :class="{active : step2.rate == 'hard'}"
-                                            @click="selectStep2Rate('hard')"
-                                            class="large-butt-grey btn-use mgr-r-20">Khó sử dụng</button>
-                                        <button :class="{active : step2.rate == 'normal'}"
-                                            @click="selectStep2Rate('normal')"
-                                            class="large-butt-grey btn-use pd-use-btn mgr-r-20">Bình thường</button>
-                                        <button :class="{active : step2.rate == 'easy'}"
-                                            @click="selectStep2Rate('easy')" class="large-butt-grey btn-use">Dễ sử
-                                            dụng</button>
-                                    </div>
-                                </div>
-                                <div v-show="step == 3" class="contain">
-                                    <div class="intro">Bạn muốn Rever.vn cần cải thiện thêm về điều gì?</div>
-                                    <div class="checkbox-option">
-                                        <div class="checkbox-pc">
-                                            <div class="row-fb">
-                                                <div>
-                                                    <label class="container-cb">Giao diện đẹp hơn
-                                                        <input type="checkbox" v-model="step3.improve.ui">
-                                                        <span class="checkmark"></span>
-                                                    </label>
-                                                    <label class="container-cb">Nội dung chính xác hơn
-                                                        <input type="checkbox" v-model="step3.improve.content">
-                                                        <span class="checkmark"></span>
-                                                    </label>
-                                                </div>
-                                                <div>
-                                                    <label class="container-cb">Thêm tính năng
-                                                        <input type="checkbox" v-model="step3.improve.feature">
-                                                        <span class="checkmark"></span>
-                                                    </label>
-                                                    <label class="container-cb">Khác (vui lòng nhập)
-                                                        <input type="checkbox" v-model="step3.improve.other"
-                                                            @change="onSelectOtherMsg('')">
-                                                        <span class="checkmark"></span>
-                                                    </label>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="share-rv">
-                                            <p style="font-size: initial">Ý kiến khác</p>
-                                            <textarea v-model="step3.otherMsg" placeholder="Nhập ý kiến khác" ref="msg"
-                                                :disabled="!step3.improve.other"></textarea>
-                                        </div>
-                                    </div>
-                                </div>
-                                <a @click="gotoStep(step - 1)" v-show="step > 1"
-                                    class="butt-primary butt-transparent prev" href="javascript:void(0)"
-                                    id="prev">Trước</a>
-                                <a @click="onClickNext()" v-show="step < 3" :disabled="!canNext"
-                                    class="butt-primary btn-grey next" href="javascript:void(0)" id="next">Tiếp</a>
-                                <button @click="onClickSend" v-show="step == 3" class="butt-primary btn-grey">
-                                    <span v-show="!isSending" class="send">Gửi</span>
-                                    <span v-show="isSending">Đang gửi...</span>
-                                </button>
-                            </fieldset>
-                        </form>
-                    </div>
-                    <div class="visible-sm">
-                        <div class="header-sm">
-                            <button @click="hideModal()" class="popup-close-btn-sm"><i
-                                    class="zmdi zmdi-hc-2x zmdi-close"></i></button>
-                            <h4>Đánh giá của bạn về Rever.vn</h4>
-                        </div>
-                        <div class="content">
-                            <div class="intro-sm">
-                                <p>Bạn có sẵn sàng giới thiệu Rever cho người khác?</p>
-                                <div class="choose-number">
-                                    <ul>
-                                        <li v-for="i in 10" @click="selectStep1Rate(i)">
-                                            <a :class="{active: step1.rate == i}" href="javascript:void(0)"
-                                                v-text="i"></a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="use-easy">
-                                <p>Bạn thấy Rever có dễ sử dụng không?</p>
-                                <div class="row pt-15 center-item">
-                                    <button :class="{active : step2.rate == 'hard'}" @click="selectStep2Rate('hard')"
-                                        class="large-butt-grey btn-use mgr-r-20">Khó sử dụng</button>
-                                    <button :class="{active : step2.rate == 'normal'}"
-                                        @click="selectStep2Rate('normal')"
-                                        class="large-butt-grey btn-use pd-use-btn">Bình thường</button>
-                                    <button :class="{active : step2.rate == 'easy'}" @click="selectStep2Rate('easy')"
-                                        class="large-butt-grey btn-use">Dễ sử dụng</button>
-                                </div>
-                            </div>
-                            <div class="improve">
-                                <p>Bạn muốn Rever.vn cần cải thiện thêm về điều gì?</p>
-                                <div class="checkbox-sm">
-                                    <label class="container-cb">Giao diện đẹp hơn
-                                        <input type="checkbox" v-model="step3.improve.ui">
-                                        <span class="checkmark"></span>
-                                    </label>
-                                    <label class="container-cb">Nội dung chính xác hơn
-                                        <input type="checkbox" v-model="step3.improve.content">
-                                        <span class="checkmark"></span>
-                                    </label>
-                                    <label class="container-cb">Thêm tính năng
-                                        <input type="checkbox" v-model="step3.improve.feature">
-                                        <span class="checkmark"></span>
-                                    </label>
-                                    <label class="container-cb">Khác (vui lòng nhập)
-                                        <input type="checkbox" v-model="step3.improve.other"
-                                            @change="onSelectOtherMsg('2')">
-                                        <span class="checkmark"></span>
-                                    </label>
-                                </div>
-                            </div>
-                            <div class="note">
-                                <p>Ý kiến khác</p>
-                                <textarea v-model="step3.otherMsg" placeholder="Nhập ý kiến khác" ref="msg2"
-                                    :disabled="!step3.improve.other"></textarea>
-                            </div>
-                        </div>
-                        <div class="btn">
-                            <button @click="onClickSend" class="butt-primary btn-red">Gửi phản hồi</button>
-                        </div>
-                    </div>
-                </div>
-                <div v-show="state == 'finished'" class="popup-fb-success">
-                    <div class="popup-header">
-                        <h2 class="popup-title-w-back height-title popup-font-tiempos">Đánh giá của bạn về Rever.vn</h2>
-                        <button @click="hideModal()" class="popup-close-btn"><i
-                                class="zmdi zmdi-hc-2x zmdi-close"></i></button>
-                    </div>
-                    <div class="popup-contain">
-                        <img class="img-success" src="https://s3-cdn.rever.vn/p/v2.42.42/images/icon-success.svg">
-                        <div class="send-success">
-                            <h3>Đã gửi thành công!</h3>
-                            <p>Cảm ơn bạn đã gửi phản hồi cho Rever, ý kiến của bạn sẽ giúp Rever.vn từng bước nâng cao
-                                chất lượng sản phẩm. Mọi thắc mắc nếu có xin vui lòng liên hệ hotline (24/7):
-                                <strong>1800 234 546</strong>
-                            </p>
-                        </div>
-                    </div>
-                    <div class="popup-footer">
-                        <a @click="hideModal()" class="butt-primary butt-red btn-red" href="javascript:void(0)">Đóng</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div> -->
+
     <script type="deferjs"
         src="https://s3-cdn.rever.vn/p/v2.42.42/app_v2/feedback-modal.min.js?v=1650377153732"></script>
     <script>
@@ -1490,6 +1161,7 @@
             </li>
         </ul>
     </div>
+    <!-- show-popup -->
     <!-- <div id="project-components">
         <project-contact ref="contact"></project-contact>
         <popup-share-social></popup-share-social>
@@ -1782,27 +1454,6 @@
         }
         window.UserIp = "14.250.213.102"
     </script>
-    <!-- show-swiper -->
-    <script type="text/javascript">
-        let swiper = new Swiper(".mySwiper", {
-            spaceBetween: 50,
-            pagination: {
-                el: ".swiper-pagination",
-                clickable: true,
-            },
-        });
-
-
-        let swiper2 = new Swiper(".mySwiper2", {
-            direction: "vertical",
-            spaceBetween: 50,
-            pagination: {
-                el: ".swiper-pagination",
-                clickable: true,
-            },
-        });
-    </script>
-
     <script type="deferjs"
         src="https://s3-cdn.rever.vn/p/v2.42.42/js/jquery.flexslider.jfix-0.0.1.min.js?v=1650377153732"></script>
     <script type="deferjs" src="https://s3-cdn.rever.vn/p/v2.42.42/js/vendor/ion-slider/ion.rangeSlider.js"></script>
@@ -1811,11 +1462,11 @@
     <script type="deferjs" src="https://s3-cdn.rever.vn/p/import/external.js?v=1650377153732"></script>
     <script type="deferjs" src="https://s3-cdn.rever.vn/p/import/tracking.min.js?v=1650377153732"></script>
     <script type="text/javascript">
-        (function (c, l, a, r, i, t, y) {
-            c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
-            t = l.createElement(r); t.async = 1; t.defer = 1; t.src = "https://www.clarity.ms/tag/" + i;
-            y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
-        })(window, document, "clarity", "script", "3y09hfteky");
+            (function (c, l, a, r, i, t, y) {
+                c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
+                t = l.createElement(r); t.async = 1; t.defer = 1; t.src = "https://www.clarity.ms/tag/" + i;
+                y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+            })(window, document, "clarity", "script", "3y09hfteky");
     </script>
     <script type="deferjs">
     window.ga && ga('send', 'event', 'ProjectCTABetaTest', 'Display', 'Default');
@@ -1865,11 +1516,7 @@
                 "name":"Masterise Homes"
             }
         }
-
-        
     </script>
-
-
     <script defer
         src="https://static.cloudflareinsights.com/beacon.min.js/v652eace1692a40cfa3763df669d7439c1639079717194"
         integrity="sha512-Gi7xpJR8tSkrpF7aordPZQlW2DLtzUlZcumS8dMQjwDHEnw9I7ZLyiOj/6tZStRBGtGgN6ceN6cMH8z7etPGlw=="
